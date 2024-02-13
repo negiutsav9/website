@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  important: true,
   content: [
     './pages/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -7,11 +8,16 @@ module.exports = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      fontFamily:{
+        'title': ['Pacifico', 'cursive']
       },
+      backgroundImage:{
+        'main' : "url('/app/assets/bg_image.png')"
+      },
+      colors:{
+        'blue-1': '#101448 ',
+        'blue-2': '#004e92'
+      }
     },
   },
   plugins: [],
