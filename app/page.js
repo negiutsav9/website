@@ -10,7 +10,7 @@ const titleSnap = await getDoc(doc(db, 'Main', 'Heading'))
 
 const eduSnap = await getDoc(doc(db, 'Profile', 'Education'))
 const sumSnap = await getDoc(doc(db, 'Profile', 'Summary'))
-const expSnap = await getDoc(doc(db, 'Profile', 'Experience'))
+const expSnap = await getDoc(doc(db, 'Profile', 'Work'))
 const intSnap = await getDoc(doc(db, 'Profile', 'Interest'))
 const skillSnap = await getDoc(doc(db, 'Profile', 'Skills'))
 
@@ -23,9 +23,7 @@ const intData = intSnap.exists() ? intSnap.data() : null
 const skillData = skillSnap.exists() ? skillSnap.data() : null
 
 
-let url = await getDownloadURL(ref(storage, expData.List[2].crest_url))
-
-export const data = [eduData, sumData, expData, intData, skillData]
+export const data = [eduData.List.reverse(), sumData, expData.List.reverse(), intData, skillData.List]
 
 
 export default function Home() {

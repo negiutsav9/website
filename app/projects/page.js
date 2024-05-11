@@ -22,7 +22,7 @@ export default function Projects(){
             <div id='title' className="justify-center text-center xl:text-left text-3xl md:text-4xl lg:text-5xl">
                 Projects
             </div>
-            <div className="flex flex-col w-[95vw] lg:w-[95%] justify-center items-center p-8 py-10 lg:py-20">
+            <div className="flex flex-col w-[99vw] lg:w-[95%] justify-center items-center p-8 py-10 lg:py-20">
                 <div className="grid grid-cols-1 landscape:sm:grid-cols-2 md:grid-cols-2 landscape:lg:grid-cols-3 landscape:2xl:grid-cols-2 gap-5 lg:gap-10">
                     {courseData.List.map((data, index) => 
                         <div key={index} className="grid grid-cols-1 2xl:grid-cols-2 hover:bg-blue-1 rounded-2xl hover:bg-opacity-40 duration-0 transition hover:duration-700">

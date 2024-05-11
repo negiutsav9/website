@@ -16,7 +16,7 @@ async function Navbar() {
 
     return ( 
         <div>
-            <nav className='fixed portrait:justify-center portrait:items-center justify-between flex h-fit w-full text-white z-20 backdrop-filter backdrop-blur bg-opacity-20 p-7'>
+            <nav className='fixed portrait:justify-center portrait:items-center justify-between flex h-fit w-full text-white z-20 backdrop-filter backdrop-blur bg-opacity-20 p-4 lg:p-7'>
                 <div className='text-4xl lg:text-5xl font-title '>
                     <Link href='/' scroll={false}>UN</Link>
                 </div>
