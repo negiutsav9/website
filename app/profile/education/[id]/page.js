@@ -1,5 +1,3 @@
-'use client'
-
 import {app} from "../../../firebase";
 import {getFirestore ,doc, getDoc} from "firebase/firestore"
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
