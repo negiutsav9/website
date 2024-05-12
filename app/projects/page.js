@@ -33,8 +33,15 @@ export default function Projects(){
                                 <div className="text-xl lg:text-2xl xl:text-3xl py-4">
                                     {data.Title}
                                 </div>
-                                <div className="text-md lg:text-lg xl:text-xl pb-4 pt-2">
+                                <div className="text-md lg:text-lg xl:text-xl pb-5 pt-2">
                                     {data.Summary} 
+                                </div>
+                                <div className='flex h-8 my-2'>
+                                    {data.Tools.map((tool, index) =>
+                                        <div>
+                                            <Image key={index} className="pr-5 h-full w-full" src={tool} width={20} height={20}/> 
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>
@@ -52,6 +59,13 @@ export default function Projects(){
                                 <div className="text-md lg:text-lg xl:text-xl pb-4 pt-2">
                                     {data.Summary} 
                                 </div>
+                                <div className='flex h-8 my-2'>
+                                    {data.Tools.map((tool, index) =>
+                                        <div>
+                                            <Image key={index} className="pr-5 h-full w-full" src={tool} width={20} height={20}/> 
+                                        </div>
+                                    )}
+                                </div>
                             </div>
                         </div>
                     )
@@ -68,6 +82,13 @@ export default function Projects(){
                                 <div className="text-md lg:text-lg xl:text-xl pb-4 pt-2">
                                     {data.Summary} 
                                 </div>
+                                <div className='flex h-8 my-2'>
+                                    {data.Tools.map((tool, index) =>
+                                        <div>
+                                            <Image key={index} className="pr-5 h-full w-full" src={tool} width={20} height={20}/> 
+                                        </div>
+                                    )}
+                                </div>
                             </div>
                         </div>
                     )
@@ -83,6 +104,13 @@ export default function Projects(){
                                 </div>
                                 <div className="text-md lg:text-lg xl:text-xl pb-4 pt-2">
                                     {data.Summary} 
+                                </div>
+                                <div className='flex h-8 my-2'>
+                                    {data.Tools.map((tool, index) =>
+                                        <div>
+                                            <Image key={index} className="pr-5 h-full w-full" src={tool} width={20} height={20}/> 
+                                        </div>
+                                    )}
                                 </div>
                             </div>
                         </div>

@@ -1,7 +1,6 @@
 import {app} from "../firebase";
 import { data } from "../page";
 import Image from "next/image";
-import pic from "./image.png"
 import Link from 'next/link';
 
 export default async function Profile(){
@@ -19,7 +18,7 @@ export default async function Profile(){
                     <div id='grid' className="grid grid-cols-1 portrait:grid-cols-1 landscape:grid-cols-3 gap-5">
                         <div id='photo' className="flex justify-center items-center">
                             <div className="col-span-1 p-6">
-                                <Image className="h-fit w-fit xl:h-72 xl:h-72 rounded-full" src={pic}/>
+                                <Image className="h-fit w-fit xl:h-72 xl:h-72 rounded-full" src={data[1].ImageLink} width={720} height={720}/>
                             </div>
                         </div>
                         <div id='title' className="col-span-2">
@@ -27,19 +26,11 @@ export default async function Profile(){
                                 Summary
                             </div>
                             <div id='content' className="py-2 lg:py-5 text-md lg:text-lg xl:text-xl">
-                                <p className="py-2">
-                                    With a background originating from the foothills of the Himalayas and upbringing in the Middle East, I bring a curious and inquisitive nature to the field of
-                                    machine learning and software engineering. My journey into computer science has encompassed a wide range of subjects, including object-oriented programming,
-                                    algorithms, operating systems, software scalability, mobile development, digital systems, and web development.
-                                </p>
-                                <p className="py-2">
-                                    As I delved deeper into these concepts, I became increasingly fascinated by the potential of artificial intelligence and machine learning. Witnessing the transformative
-                                    impact these technologies were having across various industries and research domains, I was inspired to apply my knowledge and skills to solve complex machine learning problems.
-                                </p>
-                                <p className="py-2">
-                                    My expertise lies in regression modeling, probabilistic modeling, neural networks, federated learning, reinforcement learning, and AI algorithms. I am eager to collaborate
-                                    on innovative and groundbreaking projects that leverage machine learning and software engineering to drive positive change and achieve remarkable results.
-                                </p>                           
+                                {data[1].Summary.map((data,index) => 
+                                    <p key={index} className="py-2">
+                                        {data}
+                                    </p>
+                                )}                          
                             </div> 
                         </div>
                     </div>
@@ -51,8 +42,7 @@ export default async function Profile(){
                     <div id='edu-list' className="grid grid-cols-1 lg:grid-cols-2 py-5 gap-5 md:text-md lg:text-lg xl:text-xl">
                         {data[0].map((data,index) => 
                         <Link href={eduLink.concat("/",index)}>
-                            <div key={Math.random() * 10} className="p-5 grid grid-cols-1 landscape:grid-cols-3 rounded-xl z-5 backdrop-filter backdrop-blur bg-opacity-30 gap-3 transition hover:cursor-pointer hover:bg-violet-950 duration-500">
-                                
+                            <div key={Math.random() * 10} className="p-5 grid grid-cols-1 landscape:grid-cols-3 rounded-xl z-5 backdrop-filter backdrop-blur bg-opacity-30 gap-3 transition hover:cursor-pointer hover:bg-violet-950 duration-500 h-full">
                                     <div id='logo' className="flex col-span-1 w-full h-full justify-center items-center">
                                         <Image src={data.crest_url} width={150} height={150}/>
                                     </div>
@@ -82,7 +72,7 @@ export default async function Profile(){
                     <div id='exp-list' className="grid grid-cols-1 lg:grid-cols-2 py-5 gap-5 md:text-md lg:text-lg xl:text-xl">
                     {data[2].map((data,index) => 
                     <Link href={workLink.concat("/",index)}>
-                            <div key={index} className="p-5 grid grid-cols-1 landscape:grid-cols-3 rounded-xl z-5 backdrop-filter backdrop-blur bg-opacity-30 gap-3 transition hover:cursor-pointer hover:bg-violet-950 duration-500">
+                            <div key={index} className="p-5 grid grid-cols-1 landscape:grid-cols-3 rounded-xl z-5 backdrop-filter backdrop-blur bg-opacity-30 gap-3 transition hover:cursor-pointer hover:bg-violet-950 duration-500 h-full ">
                                 <div id='logo' className="flex col-span-1 w-full h-full justify-center items-center">
                                     <Image src={data.Crest_Url} width={150} height={150}/>
                                 </div>
@@ -113,7 +103,7 @@ export default async function Profile(){
                         Skills
                     </div>
                     <div id='skill_table' className="w-full py-5 grid grid-cols-1 lg:grid-cols-6 gap-8">
-                        <div className="rounded-xl z-5 backdrop-filter backdrop-blur bg-opacity-30 p-5 col-span-3">
+                        <div className="rounded-xl z-5 backdrop-filter backdrop-blur bg-opacity-30 p-5 col-span-3 w-full">
                             <div className="text-lg lg:text-xl xl:text-2xl py-2">
                                 Software & Programming
                             </div>
@@ -123,7 +113,7 @@ export default async function Profile(){
                                 )}
                             </ul>
                         </div>
-                        <div className="rounded-xl z-5 backdrop-filter backdrop-blur bg-opacity-30 p-5 col-span-3">
+                        <div className="rounded-xl z-5 backdrop-filter backdrop-blur bg-opacity-30 p-5 col-span-3 w-full">
                             <div className="text-lg lg:text-xl xl:text-2xl py-2">
                                 Machine Learning
                             </div>
@@ -133,17 +123,17 @@ export default async function Profile(){
                                 )}
                             </ul>
                         </div>
-                        <div className="rounded-xl z-5 backdrop-filter backdrop-blur bg-opacity-30 p-5 col-span-2">
+                        <div className="rounded-xl z-5 backdrop-filter backdrop-blur bg-opacity-30 p-5 landscape:col-span-2 col-span-3  w-full">
                             <div className="text-lg lg:text-xl xl:text-2xl py-2">
                                 Web Development
                             </div>
-                            <ul className='list-disc grid grid-cols-1 landscape:grid-cols-2 md:grid-cols-1 xl:grid-cols-2 gap-4 xl:gap-5 p-5'>
+                            <ul className='list-disc grid grid-cols-2 gap-4 xl:gap-5 p-5'>
                                 {data[4]['Web Development'].map((data, index) => 
                                     <li key={index}>{data}</li>
                                 )}
                             </ul>
                         </div>
-                        <div className="rounded-xl z-5 backdrop-filter backdrop-blur bg-opacity-30 p-5 col-span-2">
+                        <div className="rounded-xl z-5 backdrop-filter backdrop-blur bg-opacity-30 p-5 landscape:col-span-2 col-span-3 w-full">
                             <div className="text-lg lg:text-xl xl:text-2xl py-2">
                                 Mobile App Development
                             </div>
@@ -153,7 +143,7 @@ export default async function Profile(){
                                 )}
                             </ul>
                         </div>
-                        <div className="rounded-xl z-5 backdrop-filter backdrop-blur bg-opacity-30 p-5 col-span-2">
+                        <div className="rounded-xl z-5 backdrop-filter backdrop-blur bg-opacity-30 p-5 landscape:col-span-2 col-span-3  w-full">
                             <div className="text-lg lg:text-xl xl:text-2xl py-2">
                                 Cloud Development
                             </div>
