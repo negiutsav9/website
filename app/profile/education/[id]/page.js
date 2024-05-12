@@ -9,6 +9,10 @@ import {data} from "../../../page"
 const db = getFirestore(app)
 const storage = getStorage(app)
 
+export async function generateStaticParams() {
+    return []
+}
+
 export default function Detail({params}){
 
     return(

@@ -9,6 +9,10 @@ import {data} from "../../../page"
 const db = getFirestore(app)
 const storage = getStorage(app)
 
+export async function generateStaticParams() {
+    return []
+}
+
 export default function Detail({params}){
     return(
         <main className="flex flex-col py-28 md:py-36 lg:py-48 landscape:xl:py-40 px-8 md:px-12 lg:px-16 items-center h-screen no-scrollbar scroll-smooth overflow-x-hidden w-screen">
