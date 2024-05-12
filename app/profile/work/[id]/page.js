@@ -1,3 +1,5 @@
+'use client'
+
 import {app} from "../../../firebase";
 import {getFirestore ,doc, getDoc} from "firebase/firestore"
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
@@ -8,10 +10,6 @@ const db = getFirestore(app)
 const storage = getStorage(app)
 
 export const runtime = 'edge';
-
-export async function generateStaticParams() {
-    return []
-}
 
 export default function Detail({params}){
     return(
