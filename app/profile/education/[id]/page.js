@@ -1,13 +1,9 @@
-import {app} from "../../../firebase";
-import {getFirestore ,doc, getDoc} from "firebase/firestore"
-import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import Image from "next/image";
 import {data} from "../../../page"
 
-const db = getFirestore(app)
-const storage = getStorage(app)
-
-export const runtime = 'edge';
+export async function generateStaticParams(){
+    return [{ id: '0' }, { id: '1' }]
+} 
 
 export default function Detail({params}){
 

@@ -1,5 +1,3 @@
-'use client'
-
 import Image from 'next/image'
 import {app} from "./firebase";
 import {getFirestore ,doc, getDoc} from "firebase/firestore"
@@ -24,9 +22,7 @@ const expData = expSnap.exists() ? expSnap.data() : null
 const intData = intSnap.exists() ? intSnap.data() : null
 const skillData = skillSnap.exists() ? skillSnap.data() : null
 
-
 export const data = [eduData.List.reverse(), sumData, expData.List.reverse(), intData, skillData.List]
-
 
 export default function Home() {
   return (

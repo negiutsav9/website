@@ -1,4 +1,3 @@
-import {app} from "../firebase";
 import { data } from "../page";
 import Image from "next/image";
 import Link from 'next/link';
