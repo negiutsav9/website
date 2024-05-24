@@ -2,6 +2,7 @@ import {app} from "../firebase";
 import {getFirestore ,doc, getDoc} from "firebase/firestore"
 import { getStorage, ref, getDownloadURL } from "firebase/storage";
 import Image from "next/image";
+import Link from 'next/link';
 
 const db = getFirestore(app)
 const storage = getStorage(app)
@@ -15,6 +16,8 @@ const courseData = courseSnap.exists() ? courseSnap.data() : null
 const indepData = indepSnap.exists() ? indepSnap.data() : null
 const researchData = researchSnap.exists() ? researchSnap.data() : null
 const workData = workSnap.exists() ? workSnap.data() : null
+
+const githubUrl = await getDownloadURL(ref(storage, 'gs://portfolio3-70a77.appspot.com/Icons/github_icon.png'))
 
 export default function Projects(){
     return (
@@ -36,12 +39,21 @@ export default function Projects(){
                                 <div className="text-md lg:text-lg xl:text-xl pb-5 pt-2">
                                     {data.Summary} 
                                 </div>
-                                <div className='flex h-8 my-2'>
+                                <div className='flex h-8 my-2 justify-between'>
+                                    <div className="flex">
                                     {data.Tools.map((tool, index) =>
                                         <div>
                                             <Image key={index} className="pr-5 h-full w-full" src={tool} width={20} height={20}/> 
                                         </div>
                                     )}
+                                    </div>
+                                    <div>
+                                        {data.GitHub !== "" && 
+                                            <div>
+                                                <Link scroll={false} href={data.GitHub}><Image src={githubUrl} width={30} height={30}/></Link>
+                                            </div>
+                                        }
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -59,12 +71,21 @@ export default function Projects(){
                                 <div className="text-md lg:text-lg xl:text-xl pb-4 pt-2">
                                     {data.Summary} 
                                 </div>
-                                <div className='flex h-8 my-2'>
+                                <div className='flex h-8 my-2 justify-between'>
+                                    <div className="flex">
                                     {data.Tools.map((tool, index) =>
                                         <div>
                                             <Image key={index} className="pr-5 h-full w-full" src={tool} width={20} height={20}/> 
                                         </div>
                                     )}
+                                    </div>
+                                    <div>
+                                        {data.GitHub !== "" && 
+                                            <div>
+                                                <Link scroll={false} href={data.GitHub}><Image src={githubUrl} width={30} height={30}/></Link>
+                                            </div>
+                                        }
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -82,12 +103,21 @@ export default function Projects(){
                                 <div className="text-md lg:text-lg xl:text-xl pb-4 pt-2">
                                     {data.Summary} 
                                 </div>
-                                <div className='flex h-8 my-2'>
+                                <div className='flex h-8 my-2 justify-between'>
+                                    <div className="flex">
                                     {data.Tools.map((tool, index) =>
                                         <div>
                                             <Image key={index} className="pr-5 h-full w-full" src={tool} width={20} height={20}/> 
                                         </div>
                                     )}
+                                    </div>
+                                    <div>
+                                        {data.GitHub !== "" && 
+                                            <div>
+                                                <Link scroll={false} href={data.GitHub}><Image src={githubUrl} width={30} height={30}/></Link>
+                                            </div>
+                                        }
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -105,12 +135,21 @@ export default function Projects(){
                                 <div className="text-md lg:text-lg xl:text-xl pb-4 pt-2">
                                     {data.Summary} 
                                 </div>
-                                <div className='flex h-8 my-2'>
+                                <div className='flex h-8 my-2 justify-between'>
+                                    <div className="flex">
                                     {data.Tools.map((tool, index) =>
                                         <div>
                                             <Image key={index} className="pr-5 h-full w-full" src={tool} width={20} height={20}/> 
                                         </div>
                                     )}
+                                    </div>
+                                    <div>
+                                        {data.GitHub !== "" && 
+                                            <div>
+                                                <Link scroll={false} href={data.GitHub}><Image src={githubUrl} width={30} height={30}/></Link>
+                                            </div>
+                                        }
+                                    </div>
                                 </div>
                             </div>
                         </div>
