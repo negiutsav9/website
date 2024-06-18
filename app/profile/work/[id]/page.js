@@ -2,7 +2,7 @@ import Image from "next/image";
 import {data} from "../../../page"
 
 export async function generateStaticParams(){
-    return [{ id: '0' }, { id: '1' }, { id: '2' }]
+    return [{ id: '0' }, { id: '1' }, { id: '2' }, { id: '3' }]
 } 
 
 export default function Detail({params}){

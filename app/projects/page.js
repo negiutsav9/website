@@ -43,7 +43,7 @@ export default function Projects(){
                                     <div className="flex">
                                     {data.Tools.map((tool, index) =>
                                         <div className="w-12">
-                                            <Image key={index} className="pr-5 w-full h-full    " src={tool} width={20} height={20}/> 
+                                            <Image key={index} className="pr-5 w-full h-full" src={tool} width={20} height={20}/> 
                                         </div>
                                     )}
                                     </div>
