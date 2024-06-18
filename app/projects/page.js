@@ -42,8 +42,8 @@ export default function Projects(){
                                 <div className='flex h-8 my-2 justify-between'>
                                     <div className="flex">
                                     {data.Tools.map((tool, index) =>
-                                        <div>
-                                            <Image key={index} className="pr-5 h-full w-full" src={tool} width={20} height={20}/> 
+                                        <div className="w-12">
+                                            <Image key={index} className="pr-5 w-full h-full    " src={tool} width={20} height={20}/> 
                                         </div>
                                     )}
                                     </div>
@@ -74,8 +74,8 @@ export default function Projects(){
                                 <div className='flex h-8 my-2 justify-between'>
                                     <div className="flex">
                                     {data.Tools.map((tool, index) =>
-                                        <div>
-                                            <Image key={index} className="pr-5 h-full w-full" src={tool} width={20} height={20}/> 
+                                        <div className="w-12">
+                                            <Image key={index} className="pr-5 w-full h-full" src={tool} width={20} height={20}/> 
                                         </div>
                                     )}
                                     </div>
@@ -106,8 +106,8 @@ export default function Projects(){
                                 <div className='flex h-8 my-2 justify-between'>
                                     <div className="flex">
                                     {data.Tools.map((tool, index) =>
-                                        <div>
-                                            <Image key={index} className="pr-5 h-full w-full" src={tool} width={20} height={20}/> 
+                                        <div className="w-12">
+                                            <Image key={index} className="pr-5 w-full h-full" src={tool} width={20} height={20}/> 
                                         </div>
                                     )}
                                     </div>
@@ -138,8 +138,8 @@ export default function Projects(){
                                 <div className='flex h-8 my-2 justify-between'>
                                     <div className="flex">
                                     {data.Tools.map((tool, index) =>
-                                        <div>
-                                            <Image key={index} className="pr-5 h-full w-full" src={tool} width={20} height={20}/> 
+                                        <div className="w-12">
+                                            <Image key={index} className="pr-5 w-full h-full" src={tool} width={20} height={20}/> 
                                         </div>
                                     )}
                                     </div>
