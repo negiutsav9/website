@@ -2,7 +2,7 @@ import { data } from "../page";
 import Image from "next/image";
 import Link from 'next/link';
 
-export default async function Profile(){
+export default function Profile(){
 
     const eduLink = "/profile/education"
     const workLink = "/profile/work"
@@ -17,7 +17,7 @@ export default async function Profile(){
                     <div id='grid' className="grid grid-cols-1 portrait:grid-cols-1 landscape:grid-cols-3 gap-5">
                         <div id='photo' className="flex justify-center items-center">
                             <div className="col-span-1 p-6">
-                                <Image className="h-fit w-fit xl:h-72 xl:h-72 rounded-full" src={data[1].ImageLink} width={720} height={720}/>
+                                <Image className="h-fit w-fit xl:h-72 rounded-full" src={data[1].ImageLink} width={720} height={720}/>
                             </div>
                         </div>
                         <div id='title' className="col-span-2">

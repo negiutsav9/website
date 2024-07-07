@@ -9,7 +9,7 @@ export default function Detail({params}){
 
     return(
         <main className="flex flex-col py-28 md:py-36 lg:py-48 landscape:xl:py-40 px-8 md:px-12 lg:px-16 items-center h-screen no-scrollbar scroll-smooth overflow-x-hidden w-screen">
-            <div className="flex-col flex items-center grid grid-cols-1 landscape:grid-cols-3 rounded-xl z-5 backdrop-filter backdrop-blur bg-opacity-30 gap-3">
+            <div className="flex-col items-center grid grid-cols-1 landscape:grid-cols-3 rounded-xl z-5 backdrop-filter backdrop-blur bg-opacity-30 gap-3">
                 <div id='logo' className="flex col-span-1 w-full h-full justify-center items-center">
                     <Image src={data[0][params.id].crest_url} width={250} height={250}/>
                 </div>
