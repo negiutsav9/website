@@ -1,5 +1,3 @@
-"use client"
-
 import Image from 'next/image'
 import {app} from "./firebase";
 import {getFirestore ,doc, getDoc} from "firebase/firestore"
